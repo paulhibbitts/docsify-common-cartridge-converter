@@ -1,0 +1,12 @@
+{
+    "name": "hibbittsdesign/docsify-common-cartridge-converter",
+    "description": "Canvas/LMS Common Cartridge to Docsify / Docsify-This flat Markdown converter",
+    "require": {
+        "php": ">=8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "DC\\": "src/"
+        }
+    }
+}
