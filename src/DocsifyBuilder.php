@@ -149,40 +149,55 @@ class DocsifyBuilder
         }
     }
 
+    // Home only ever holds the intro module's own landing content – any other items in
+    // that module (indent-1 children, or any ExternalUrl/Attachment) become their own
+    // linked pages via buildChildPage(), the same split buildModule() applies to every
+    // other module. Home previously flattened the whole module onto one page regardless
+    // of indent, which could pack a dozen unrelated pages worth of content onto the site's
+    // single landing page instead of giving each its own place in the sidebar.
     private function buildHome(?array $mod): void
     {
-        $body  = '';
-        $links = [];
-
         $cover = $this->courseCoverImageMarkdown();
-        if ($cover) $body .= $cover . "\n\n";
 
-        if ($mod) {
-            foreach ($mod['items'] as $item) {
-                if ($item['type'] === 'WikiPage') {
-                    $html = $this->getWikiHtml($item);
-                    if ($html) $body .= $this->collectImages($html) . "\n\n";
-                    if ($item['slug']) $this->registerSlug($item['slug'], 'home');
-                } elseif ($item['type'] === 'ExternalUrl') {
-                    $url = $item['url'] ?? '';
-                    if ($url) $links[] = rtrim($this->externalUrlBody($url, $this->cleanTitle($item['title'])));
-                    $this->externalUrlCount++;
-                } elseif ($item['type'] === 'Attachment') {
-                    $links[] = $this->attachmentLink($item);
-                    $this->attachmentCount++;
-                }
-            }
+        if (!$mod) {
+            $title = $this->parser->courseTitle ?: 'Home';
+            $body  = $cover ? $cover . "\n\n" : '';
+            $this->addFile('home.md', "# $title\n\n" . $this->conversionNotice() . trim($body) . "\n");
+            $this->sidebarEntries[] = ['type' => 'link', 'label' => 'Home', 'file' => 'home'];
+            $this->pageCount++;
+            return;
         }
 
-        if ($links) {
-            $body .= implode("\n\n", $links) . "\n";
-        }
+        [$landingItem, $childItems] = $this->splitItems($mod);
 
-        $title = $mod ? $this->cleanTitle($mod['title']) : ($this->parser->courseTitle ?: 'Home');
-        $this->addFile('home.md', "# $title\n\n" . $this->conversionNotice() . trim($body) . "\n");
+        $landingHtml = $landingItem ? $this->getWikiHtml($landingItem) : '';
+        $landingBody = $landingHtml ? $this->collectImages($landingHtml) : '';
+        if ($landingItem && $landingItem['slug']) $this->registerSlug($landingItem['slug'], 'home');
+
+        $modTitle = $this->cleanTitle($mod['title']);
+        $title    = $this->parser->courseTitle ?: $modTitle;
+
+        $body = $cover ? $cover . "\n\n" : '';
+        $body .= $this->conversionNotice();
+        $body .= trim($landingBody);
+        $this->addFile('home.md', "# $title\n\n" . trim($body) . "\n");
         $this->sidebarEntries[] = ['type' => 'link', 'label' => 'Home', 'file' => 'home'];
         $this->pageCount++;
-        if ($mod) $this->trackDropped($mod);
+
+        $childLinks = [];
+        $childN     = 1;
+        foreach ($childItems as $item) {
+            $childLinks[] = $this->buildChildPage(sprintf('home-%02d', $childN), $item);
+            $childN++;
+        }
+
+        if (count($childLinks) === 1) {
+            $this->sidebarEntries[] = ['type' => 'link', 'label' => $childLinks[0]['label'], 'file' => $childLinks[0]['file']];
+        } elseif (count($childLinks) > 1) {
+            $this->sidebarEntries[] = ['type' => 'group', 'label' => $modTitle, 'children' => $childLinks];
+        }
+
+        $this->trackDropped($mod);
     }
 
     // A brief, unmissable notice on the home page – so anyone who later browses the
@@ -257,7 +272,7 @@ class DocsifyBuilder
         $childLinks = [];
         $childN     = 1;
         foreach ($childItems as $item) {
-            $childLinks[] = $this->buildChildPage($n, $childN, $item);
+            $childLinks[] = $this->buildChildPage(sprintf('module-%02d-%02d', $n, $childN), $item);
             $childN++;
         }
 
@@ -278,14 +293,14 @@ class DocsifyBuilder
         $this->trackDropped($mod);
     }
 
-    private function buildChildPage(int $modN, int $itemN, array $item): array
+    private function buildChildPage(string $fileStem, array $item): array
     {
         $cleanedTitle = $this->cleanTitle($item['title']);
         $titleForSlug = $item['type'] === 'Attachment'
             ? preg_replace('/\.[a-zA-Z0-9]{2,5}$/', '', $cleanedTitle)
             : $cleanedTitle;
         $slug = Helpers::slugify($titleForSlug) ?: 'page';
-        $file = $this->uniquePageFile(sprintf('module-%02d-%02d-%s', $modN, $itemN, $slug));
+        $file = $this->uniquePageFile($fileStem . '-' . $slug);
 
         if ($item['type'] === 'WikiPage') {
             if ($item['slug']) $this->registerSlug($item['slug'], $file);
