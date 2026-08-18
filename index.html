@@ -159,6 +159,13 @@
     </a>, as displayed by Docsify-This
   </p>
 
+  <p class="text-[15px] text-stone-500 dark:text-stone-400 mb-5 leading-relaxed">Any single page can be displayed without the sidebar – a good fit for embedding one lesson via an iframe. For example:
+    <a href="https://docsify-this.net/?basePath=https://demo.hibbittsdesign.org/docsify-this-anim8-files&homepage=home.md#/module-02-04-a7-walk-cycle" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 font-medium text-teal-700 dark:text-teal-400 underline underline-offset-2">
+      this single lesson page
+      <svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M6.5 3H4a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-2.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M9.5 3H13v3.5M13 3L8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a> from the Digital Animation course
+  </p>
+
   <nav aria-label="How it works">
     <ol class="flex flex-col gap-2.5 mb-6 list-none p-0">
       <li class="flex items-start gap-3 text-[15px] text-stone-500 dark:text-stone-400">
@@ -288,6 +295,8 @@
         </ol>
         <p><strong>What's not included?</strong><br>
         Quizzes, discussions, and assignments have no equivalent in a flat Markdown site and are not included. A full count appears in <code>conversion-notes.txt</code> in the ZIP.</p>
+        <p><strong>Can I embed a single page elsewhere?</strong><br>
+        Yes – each page's filename becomes its route, so linking straight to <code>#/module-02-04-a7-walk-cycle</code> (matching <code>module-02-04-a7-walk-cycle.md</code> in the ZIP) opens just that page. Leave out <code>sidebar=true</code> and <code>loadSidebar=</code> for a content-only view with no navigation chrome, ready to drop into an iframe.</p>
         <p><strong>What happens to your file?</strong><br>
         The <code>.imscc</code> is extracted to a server temp directory, parsed, converted, and packaged. The temp files are immediately deleted after the ZIP is streamed to your browser – nothing is stored on the server.</p>
       </div>
