@@ -539,8 +539,14 @@ class DocsifyBuilder
         return $this->dedupeFilename($this->usedAttachmentNames, $base);
     }
 
+    // Replaces spaces so Markdown image/link syntax doesn't break (a bare space in
+    // `![alt](name with spaces.jpg)` isn't a valid URL to most Markdown parsers, including
+    // marked.js). ContentConverter::uniqueFilename() already does this for regular page
+    // images, but the course cover image (see courseCoverImageMarkdown()) is handled
+    // directly here and never passes through that sanitization, so it needs its own.
     private function dedupeFilename(array &$used, string $base): string
     {
+        $base  = preg_replace('/\s+/', '-', $base);
         $count = ($used[$base] ?? 0) + 1;
         $used[$base] = $count;
         if ($count === 1) return $base;
