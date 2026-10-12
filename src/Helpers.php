@@ -21,16 +21,6 @@ class Helpers
         return ucwords(str_replace(['-', '_'], ' ', $slug));
     }
 
-    // Derive a short description from plain text (first sentence, ≤120 chars)
-    public static function shortDescription(string $text): string
-    {
-        $text = trim(preg_replace('/\s+/', ' ', $text));
-        if (strlen($text) <= 120) return $text;
-        $pos = strpos($text, '. ');
-        if ($pos !== false && $pos < 120) return substr($text, 0, $pos + 1);
-        return substr($text, 0, 117) . '...';
-    }
-
     // Strip an instructor's own manual ordering prefix from a module/page title
     // (e.g. "1 Introduction" → "Introduction", "1. Basics" → "Basics",
     // "Unit 1.1: Foundations" → "Foundations") – redundant once the generated flat
