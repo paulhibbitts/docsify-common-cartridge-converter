@@ -562,8 +562,9 @@ class ContentConverter
     {
         // Replace spaces and parentheses/brackets so Markdown image/link syntax doesn't
         // break – a `)` inside the filename (e.g. "photo (1).jpg") closes the "![alt](url)"
-        // syntax early, at the first `)` rather than the real end of the filename.
-        $base  = preg_replace('/[\s()\[\]]+/', '-', $base);
+        // syntax early, at the first `)` rather than the real end of the filename. Colons are
+        // replaced too, as Windows doesn't allow them in file names.
+        $base  = preg_replace('/[\s()\[\]:]+/', '-', $base);
         $base  = trim($base, '-');
         $count = ($this->imageFilenames[$base] ?? 0) + 1;
         $this->imageFilenames[$base] = $count;

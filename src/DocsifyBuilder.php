@@ -565,10 +565,11 @@ class DocsifyBuilder
     // parsers, and a `)` inside the filename, e.g. "photo (1).jpg", closes the "(url)" syntax
     // early). ContentConverter::uniqueFilename() already does this for regular page images,
     // but the course cover image (see courseCoverImageMarkdown()) is handled directly here and
-    // never passes through that sanitization, so it needs its own.
+    // never passes through that sanitization, so it needs its own. Colons are replaced too,
+    // as Windows doesn't allow them in file names, so the ZIP couldn't be extracted there.
     private function dedupeFilename(array &$used, string $base): string
     {
-        $base  = preg_replace('/[\s()\[\]]+/', '-', $base);
+        $base  = preg_replace('/[\s()\[\]:]+/', '-', $base);
         $base  = trim($base, '-');
         $count = ($used[$base] ?? 0) + 1;
         $used[$base] = $count;
