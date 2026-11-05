@@ -1,0 +1,19 @@
+- [Home](home)
+- **Introduction**
+  - [Expectations](home-01-expectations)
+  - [Big Ideas and Competencies](home-02-big-ideas-and-competencies)
+- **Module 1 - Basic 2D Objects**
+  - [Overview](module-01-module-1-basic-2d-objects)
+  - [A1 - Drawing vs Shapes](module-01-01-a1-drawing-vs-shapes)
+  - [A2 - Creating Multiple Objects](module-01-02-a2-creating-multiple-objects)
+  - [A3 - Basic Animation](module-01-03-a3-basic-animation)
+- **Module 2 - Beyond Basic 2D Animation**
+  - [Overview](module-02-module-2-beyond-basic-2d-animation)
+  - [A4 - Sound Bite](module-02-01-a4-sound-bite)
+  - [A5 - Face Expressions](module-02-02-a5-face-expressions)
+  - [A6 - Reaction](module-02-03-a6-reaction)
+  - [A7 - Walk Cycle](module-02-04-a7-walk-cycle)
+- [Module 3 - Final Project](module-03-module-3-final-project)
+- **File Management**
+  - [Overview](module-04-file-management)
+  - [F2 - File Management Week 5](module-04-01-f2-file-management-week-5)

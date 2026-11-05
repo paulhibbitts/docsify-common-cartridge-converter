@@ -1,0 +1,48 @@
+Common Cartridge to Docsify Conversion Notes
+============================================
+Generated: DATE
+
+Course Metadata
+---------------
+  Title:   GPV - Digital Animation (D. Ingram)
+  Code:    ANIM8
+  License: CC BY-NC 4.0
+  License URL: https://creativecommons.org/licenses/by-nc/4.0/
+  Course image: embedded at the top of home.md
+
+Structure
+---------
+  Modules:    5
+  Wiki pages: 28
+  Pages created: 15
+  Images: 6 local (included in ZIP); external images use remote URLs
+
+Dropped Content
+---------------
+  DiscussionTopic                1
+
+  Total dropped items: 1
+
+Next Steps
+----------
+  1. Copy the contents of this ZIP (the .md files, images/, files/, and
+     _sidebar.md) into an existing Docsify or Docsify-This site's docs/
+     folder – for example one of the docsify-open-course-starter-kit
+     templates (github.com/paulhibbitts/docsify-open-course-starter-kit)
+  2. If that site already has its own _sidebar.md, merge these entries into
+     it rather than overwriting the file
+  3. Review this file for any warnings or manual fixes needed
+
+Conversion Settings
+-------------------
+  Attached files:  skipped
+  Image download:  skipped – images kept as remote URLs
+  Numbered titles: cleaned up (leading numbering stripped)
+  Sidebar:         _sidebar.md generated automatically (always included)
+
+Known Limitations
+-----------------
+  - Quizzes and discussions are not supported and have been dropped.
+  - Internal Canvas page links are rewritten to the converted page when the target is included in this course; otherwise the link points to "#" as a placeholder.
+  - LTI tool links appear as plain links to the original tool; authentication context is not preserved.
+

@@ -1,0 +1,47 @@
+- [Home](home)
+- **Welcome**
+  - [ITO Course schedule](home-01-ito-course-schedule)
+  - [Syllabus](home-02-syllabus)
+  - [Introduction to Teaching Online (ITO)](home-03-COURSE-SLUG-online-ito)
+  - [Discussion board moderators sign up sheet](home-04-discussion-board-moderators-sign-up-sheet)
+- **Module 1 - Pre-session activities**
+  - [Overview](module-01-module-1-pre-session-activities)
+  - [✍Competencies for Online Teaching.](module-01-01-competencies-for-online-teaching)
+- **Module 2 - Considering the online context, create and organize learning outcomes.**
+  - [Overview](module-02-module-2-considering-the-online-context-create-and-organize-learning-outcomes)
+  - [Considering the online context](module-02-01-considering-the-online-context)
+  - [Begin with the end in mind - Backward planning](module-02-02-begin-with-the-end-in-mind-backward-planning)
+  - [✍Self-assessment (Pre-course)](module-02-03-self-assessment-pre-course)
+  - [✍Writing your own course outcomes and learning objectives](module-02-04-writing-your-own-course-outcomes-and-learning-objectives)
+- **Module 3 - Select and use effective online formative and summative assessment strategies.**
+  - [Overview](module-03-module-3-select-and-use-effective-online-formative-and-summative-assessment-strategies)
+  - [Assessments and activities that align with learning objectives.](module-03-01-assessments-and-activities-that-align-with-learning-objectives)
+  - [✍Select effective assessments and activities that align with course outcomes.](module-03-02-select-effective-assessments-and-activities-that-align-with-course-outcomes)
+  - [START-STOP-CONTINUE](module-03-03-start-stop-continue)
+- **Module 4 - Select and use effective online instructional approaches.**
+  - [Overview](module-04-module-4-select-and-use-effective-online-instructional-approaches)
+  - [Instructional strategies](module-04-01-instructional-strategies)
+  - [✍Select effective Instructional strategies for online learning](module-04-02-select-effective-instructional-strategies-for-online-learning)
+- **Module 5 - Reflections of online learning and implications for practice.**
+  - [Overview](module-05-module-5-reflections-of-online-learning-and-implications-for-practice)
+  - [Reflection models](module-05-01-reflection-models)
+  - [✍Self-assessment  (Post-course)](module-05-02-self-assessment-post-course)
+  - [Survey Monkey](module-05-03-survey-monkey)
+- **Easy access to course files**
+  - [Competencies-for-Online-Teaching.pdf](module-06-01-competencies-for-online-teaching)
+  - [Aligning assessments and activities to learning outcomes according to Blooms levels.pdf](module-06-02-aligning-assessments-and-activities-to-learning-outcomes-according-to-blooms-levels)
+  - [Considerations for online teaching and their importance.pdf](module-06-03-considerations-for-online-teaching-and-their-importance)
+  - [Considerations for online teaching and learning checklist.pdf](module-06-04-considerations-for-online-teaching-and-learning-checklist)
+  - [good-practice-guidelines-for-remote-teaching.pdf](module-06-05-good-practice-guidelines-for-remote-teaching)
+  - [blooms_taxonomy_action_verbs.pdf](module-06-06-bloomstaxonomyactionverbs)
+  - [Backward planning template](module-06-07-backward-planning-template)
+  - [Assessment-Tools-Activities DE Toolkit.pdf](module-06-08-assessment-tools-activities-de-toolkit)
+  - [Example of completed Backward planning template for reference.](module-06-09-example-of-completed-backward-planning-template-for-reference)
+- **Additional resources**
+  - [Overview](module-07-additional-resources)
+  - [Do This, Not That Online Teaching @ KIS.pdf](module-07-01-do-this-not-that-online-teaching-kis)
+  - [Workload estimator](module-07-02-workload-estimator)
+  - [netiquette-usask-simple-290720.pdf](module-07-03-netiquette-usask-simple-290720)
+  - [netiquette-usask-detailed-270720.pdf](module-07-04-netiquette-usask-detailed-270720)
+  - [Active Learning whilst physically distancing.](module-07-05-active-learning-whilst-physically-distancing)
+  - [Zoom web conferencing](module-07-06-zoom-web-conferencing)

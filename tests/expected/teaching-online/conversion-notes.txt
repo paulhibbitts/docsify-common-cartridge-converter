@@ -1,0 +1,52 @@
+Common Cartridge to Docsify Conversion Notes
+============================================
+Generated: DATE
+
+Course Metadata
+---------------
+  Title:   Introduction to Teaching Online
+  Code:    Introduction to Teaching Online
+  License: CC BY-NC-SA 4.0
+  License URL: https://creativecommons.org/licenses/by-nc-sa/4.0/
+  Course image: embedded at the top of home.md
+
+Structure
+---------
+  Modules:    8
+  Wiki pages: 43
+  Pages created: 39
+  Images: 6 local (included in ZIP); external images use remote URLs
+  External URLs:  1 (converted to Markdown links)
+  Attachments:    12 (not included)
+
+Dropped Content
+---------------
+  DiscussionTopic                6
+  Quizzes::Quiz                  2
+  ContextExternalTool            1
+
+  Total dropped items: 9
+
+Next Steps
+----------
+  1. Copy the contents of this ZIP (the .md files, images/, files/, and
+     _sidebar.md) into an existing Docsify or Docsify-This site's docs/
+     folder – for example one of the docsify-open-course-starter-kit
+     templates (github.com/paulhibbitts/docsify-open-course-starter-kit)
+  2. If that site already has its own _sidebar.md, merge these entries into
+     it rather than overwriting the file
+  3. Review this file for any warnings or manual fixes needed
+
+Conversion Settings
+-------------------
+  Attached files:  skipped
+  Image download:  skipped – images kept as remote URLs
+  Numbered titles: cleaned up (leading numbering stripped)
+  Sidebar:         _sidebar.md generated automatically (always included)
+
+Known Limitations
+-----------------
+  - Quizzes and discussions are not supported and have been dropped.
+  - Internal Canvas page links are rewritten to the converted page when the target is included in this course; otherwise the link points to "#" as a placeholder.
+  - LTI tool links appear as plain links to the original tool; authentication context is not preserved.
+
